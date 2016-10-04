@@ -1,0 +1,1 @@
+React timer application for component life cycle and testing
