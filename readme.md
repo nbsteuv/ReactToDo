@@ -1,1 +1,1 @@
-React timer application for component life cycle and testing
+Todo application for database testing
