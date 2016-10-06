@@ -19,4 +19,13 @@ describe('AddTodo', () => {
     TestUtils.Simulate.submit($el.find('form')[0]);
     expect(spy).toHaveBeenCalledWith('testTodo');
   });
+
+  it('should not call onTodoSubmit on invalid submission', () => {
+    var spy = expect.createSpy();
+    var addTodoForm = TestUtils.renderIntoDocument(<AddTodo onTodoSubmit={spy} />);
+    var $el = $(ReactDOM.findDOMNode(addTodoForm));
+    addTodoForm.refs.newTodo.value = '';
+    TestUtils.Simulate.submit($el.find('form')[0]);
+    expect(spy).toNotHaveBeenCalled();
+  });
 });
