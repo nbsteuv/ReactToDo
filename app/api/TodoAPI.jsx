@@ -34,6 +34,11 @@ module.exports = {
       }
     });
 
+    filteredTodos = filteredTodos.filter((todo) => {
+      var text = todo.text.toLowerCase();
+      return (text.indexOf(searchText) != -1);
+    });
+
     return filteredTodos;
   }
 };
