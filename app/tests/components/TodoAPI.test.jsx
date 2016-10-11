@@ -47,4 +47,30 @@ describe('TodoAPI', () => {
       expect(localTodos).toEqual(todos);
     });
   });
+
+  describe('filterTodos', () => {
+    var todos = [{
+      id: 1,
+      text: 'Some test text',
+      completed: true
+    } , {
+      id: 2,
+      text: 'More test text',
+      completed: false
+    } , {
+      id: 3,
+      text: 'Even more test text',
+      completed: true
+    }];
+
+    it('should return all items if showCompleted is true', () => {
+      var filteredTodos = TodoAPI.filterTodos(todos, true, '');
+      expect(filteredTodos).toEqual(todos);
+    });
+
+    it('should return non-completed todos when showCompleted is false', () => {
+      var filteredTodos = TodoAPI.filterTodos(todos, false, '');
+      expect(filteredTodos.length).toBe(1);
+    });
+  });
 });
