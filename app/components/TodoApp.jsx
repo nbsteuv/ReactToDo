@@ -7,6 +7,8 @@ var AddTodo = require('AddTodo');
 var TodoSearch = require('TodoSearch');
 var TodoAPI = require('TodoAPI');
 
+var actions = require('actions');
+
 
 var TodoApp = React.createClass({
   componentDidUpdate: function(){
@@ -53,6 +55,7 @@ var TodoApp = React.createClass({
     });
   },
   render: function(){
+    console.log(actions.addTodo('Hello'));
     var {todos, showCompleted, searchText} = this.state;
     var filteredTodos = TodoAPI.filterTodos(todos, showCompleted, searchText);
     return (
