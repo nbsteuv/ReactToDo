@@ -45,12 +45,13 @@ describe('Reducers', () => {
       var testTodo = [{
         id: 167,
         text: 'Test todo text',
-        completed: false,
+        completed: true,
         createdAt: 123456,
-        completedAt: undefined
+        completedAt: 10000
       }];
       var res = reducers.todosReducer(df(testTodo), df(action));
-      expect(res[0].completed).toEqual(true);
+      expect(res[0].completed).toEqual(false);
+      expect(res[0].completedAt).toEqual(undefined);
     })
   });
 });
