@@ -4,3 +4,10 @@ export var setSearchText = (search) => {
     searchText: search
   };
 };
+
+export var addTodo = (todoText) => {
+  return {
+    type: 'ADD_TODO',
+    todoText
+  };
+};
