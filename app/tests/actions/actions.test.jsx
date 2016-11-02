@@ -11,12 +11,29 @@ describe('Actions', () => {
     expect(res).toEqual(action);
   });
 
+  it('should generate toggle show completed action', () => {
+    var action = {
+      type: 'TOGGLE_SHOW_COMPLETED'
+    };
+    var res = actions.toggleShowCompleted();
+    expect(res).toEqual(action);
+  });
+
   it('should generate add todo action', () => {
     var action = {
       type: 'ADD_TODO',
       todoText: 'Test todo text'
     };
     var res = actions.addTodo(action.todoText);
+    expect(res).toEqual(action);
+  });
+
+  it('should generate toggle todo action', () => {
+    var action = {
+      type: 'TOGGLE_TODO',
+      id: 5
+    };
+    var res = actions.toggleTodo(action.id);
     expect(res).toEqual(action);
   });
 });
