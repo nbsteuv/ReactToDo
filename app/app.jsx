@@ -24,7 +24,7 @@ require('style!css!sass!applicationStyles');
 
 ReactDOM.render(
 	<Provider store={store}>
-		<Todoapp />
+		<TodoApp />
 	</Provider>,
 	document.getElementById('app')
 );
