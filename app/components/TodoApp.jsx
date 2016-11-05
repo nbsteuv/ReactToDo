@@ -5,29 +5,18 @@ var moment = require('moment');
 import TodoList from 'TodoList';
 import AddTodo from 'AddTodo';
 import TodoSearch from 'TodoSearch';
-var TodoAPI = require('TodoAPI');
-
 
 var TodoApp = React.createClass({
-  getInitialState: function(){
-    return ({
-      todos: TodoAPI.getTodos(),
-      showCompleted: false,
-      searchText: ''
-    });
-  },
   render: function(){
-    var {todos, showCompleted, searchText} = this.state;
-    var filteredTodos = TodoAPI.filterTodos(todos, showCompleted, searchText);
     return (
       <div>
         <h1 className="page-title">Todo App</h1>
         <div className="row">
           <div className="column small-centered small-11 medium-6 large-5">
             <div className="container">
-              <TodoSearch onSearch={this.handleSearch} />
+              <TodoSearch />
               <TodoList />
-              <AddTodo onTodoSubmit={this.handleAddTodo} />
+              <AddTodo />
           </div>
           </div>
         </div>
